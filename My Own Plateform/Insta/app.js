@@ -5,6 +5,8 @@ const PORT=1001
 const{MONGOURI}=require('./keys')
 //Name-AalsiDevil  , Pass-XOHlAlOnTiyfSFau
 
+require('./models/user')
+
 mongoose.connect(MONGOURI,{
     useNewUrlParser:true,
     useUnifiedTopology:true
