@@ -1,0 +1,21 @@
+{
+  "name": "insta",
+  "version": "1.0.0",
+  "description": "My Own Plateform",
+  "main": "index.js",
+  "scripts": {
+    "test": "Hey Babe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Default"
+  },
+  "keywords": [
+    "Hello"
+  ],
+  "author": "Alsi CodeMan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
