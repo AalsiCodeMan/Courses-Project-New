@@ -1,20 +1,21 @@
 const express =require('express')
 const app=express()
+const mongoose=require('mongoose')
 const PORT=1001
+const{MONGOURI}=require('./keys')
+//Name-AalsiDevil  , Pass-XOHlAlOnTiyfSFau
 
-const customMiddleware=(req,res,next)=>{
-    console.log("MiddleWare is Running Now")
-    next()
-}
-
-app.get('/',(req,res)=>{
-    console.log("Home")
-    res.send("Hello Baby")
+mongoose.connect(MONGOURI,{
+    useNewUrlParser:true,
+    useUnifiedTopology:true
 })
 
-app.get('/aboutus',customMiddleware,(req, res) => {
-    console.log("About")
-    res.send("About us Page")
+mongoose.connection.on('connected',()=>{
+    console.log("Connected to The Data BAse")
+})
+
+mongoose.connection.on('error', (err) => {
+    console.log("Error in connecting",err)
 })
 
 app.listen(PORT,()=>{
