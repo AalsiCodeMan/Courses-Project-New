@@ -2,10 +2,7 @@ const express=require('express')
 const router=express.Router()
 const mongoose=require('mongoose')
 const User=mongoose.model("User")
-
-router.get('/',(req,res)=>{
-    res.send("Hy Baby!")
-})
+const bcrypt=require('bcryptjs')
 
 router.post('/signup',(req,res)=>{
     const{name,email,password}=req.body
@@ -17,14 +14,19 @@ router.post('/signup',(req,res)=>{
         if(savedUser){
             return res.status(422).json({error:"Already exits"})
         }
-        const user =new User({
-            email,password,name
+        bcrypt.hash(password,10)
+        .then(hashedpassword=>{
+            const user =new User({
+            email,
+            password:hashedpassword,
+            name
         })
         user.save().then(user=>{
             res.json({message:"Saved Successfully"})
         })
         .catch(err=>{
             console.log(err)
+        })
         })
     })
     .catch(err => {
