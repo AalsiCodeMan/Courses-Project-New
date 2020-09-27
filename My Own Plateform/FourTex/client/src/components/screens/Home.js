@@ -9,7 +9,7 @@ const Home=()=>{
                     <img src="https://images.unsplash.com/photo-1578998609801-595493cc256f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
                 </div>
                 <div className="card-content">
-                    <i class="material-icons" style={{color:"purple"}}>star_border</i>
+                    <i className="material-icons" style={{color:"purple"}}>star_border</i>
                     <h6>Title</h6>
                     <p>This is Amazing Post</p>
                     <input type="text" placeholder="add a comment"/>
@@ -21,7 +21,7 @@ const Home=()=>{
                     <img src="https://images.unsplash.com/photo-1558900243-1e6ef4670dc3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=968&q=80" />
                 </div>
                 <div className="card-content">
-                    <i class="material-icons" style={{ color: "purple" }}>star_border</i>
+                    <i className="material-icons" style={{ color: "purple" }}>star_border</i>
                     <h6>Title</h6>
                     <p>This is Amazing Post</p>
                     <input type="text" placeholder="add a comment" />
