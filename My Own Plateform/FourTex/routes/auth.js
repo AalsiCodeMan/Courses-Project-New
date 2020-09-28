@@ -38,6 +38,7 @@ router.post('/signup',(req,res)=>{
     })
 })
 
+
 router.post('/signin',(req,res)=>{
     const {email,password}=req.body
     if(!email || !password){
@@ -53,7 +54,8 @@ router.post('/signin',(req,res)=>{
             if(doMatch){
                 //res.json({message:"Successfully Signed in"})
                 const token=jwt.sign({_id:savedUser._id},JWT_SECRET)
-                res.json({token})
+                const{_id,name,email}=savedUser
+                res.json({token,user:{name,email,_id}})
             }
             else{
                 return res.status(422).json({error:"Invalid password"})
