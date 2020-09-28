@@ -1,15 +1,47 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React,{useState} from 'react'
+import {Link,useHistory} from 'react-router-dom'
+import M from 'materialize-css'
 
-const Signup=()=>{
+const SignIn=()=>{
+    const history=useHistory()
+    const [name,setName]=useState("")
+    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("")
+    const PostData=()=>{
+        if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)){
+            M.toast({ html:"Invalid E-mail", classes: "#00bfa5 teal accent-4" })
+            return
+        }
+        fetch("/signup",{
+            method:"post",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                name,password,email
+            })
+        }).then(res=>res.json())
+        .then(data=>{
+            if(data.error){
+                M.toast({ html: data.error, classes:"#00bfa5 teal accent-4" })
+            }else{
+                M.toast({ html: data.message, classes: "#26a69a teal lighten-1" })
+                history.push('/signin')
+            }
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+
     return(
         <div className="mycard">
             < div className = "card auth-card input-field" >
             <h2>FourTex</h2>
-            <input type="text" placeholder="Name"/>
-            <input type="text" placeholder="E-mail"/>
-            <input type="text" placeholder="Password"/>
-             <button className="btn waves-effect waves-light #b39ddb deep-purple lighten-3">SignUp</button>
+            <input type="text" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)}/>
+            <input type="text" placeholder="E-mail" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+            <input type="text" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+             <button className="btn waves-effect waves-light #b39ddb deep-purple lighten-3" onClick={()=>PostData()}>SignUp</button>
+             
              <h5>
                  <Link to="/signin">Already have an Account?</Link>
              </h5>
@@ -19,4 +51,4 @@ const Signup=()=>{
     )
 }
 
-export default Signup
+export default SignIn
