@@ -22,7 +22,7 @@ router.post('/createpost',requirelogin,(req,res)=>{
     }
     req.user.password=undefined
     const post=new Post({
-        title,body,pic,postedBy:user
+        title,body,photo:pic,postedBy:user
     })
     post.save().then(result=>{
         res.json({post:result})
