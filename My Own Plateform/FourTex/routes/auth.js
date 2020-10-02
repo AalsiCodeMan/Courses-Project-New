@@ -5,10 +5,10 @@ const User=mongoose.model("User")
 const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
 const{JWT_SECRET}=require('../keys')
-//const requirelogin=require('../middleware/requireLogin')
+const requirelogin=require('../middleware/requireLogin')
 
 
-router.post('/signup',(req,res)=>{
+router.post('/signup',requirelogin,(req,res)=>{
     const{name,email,password}=req.body
     if(!email || !password || !name){
         return res.status(422).json({error:"Please Fill all the fields"})
