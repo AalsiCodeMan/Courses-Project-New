@@ -42,7 +42,7 @@ const SignIn=()=>{
             < div className = "card auth-card input-field" >
             <h2>FourTex</h2>
            <input type="text" placeholder="E-mail" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-            <input type="text" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+            <input type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
                 <button className="btn waves-effect waves-light #b39ddb deep-purple lighten-3" onClick={() => PostData()}>Login</button>
              <h5>
                  <Link to="/signup">Don't have an Account?</Link>
