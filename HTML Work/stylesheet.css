@@ -14,5 +14,15 @@ p{
     font-family: 'Times New Roman', Times, serif;
 }
 body{
-    background: #000;
+    background: rgb(34, 143, 143);
+}
+.Edu{
+    /* display: block;
+    font-weight: bold;
+    width: 200px;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    margin: 0 auto;
+    margin-top: 10px;*/
 }
