@@ -2,6 +2,7 @@ h3{
     color: aqua;
     font-style: oblique;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: x-large;
 }
 ul{
     color: aquamarine;
@@ -14,15 +15,56 @@ p{
     font-family: 'Times New Roman', Times, serif;
 }
 body{
-    background: rgb(34, 143, 143);
+    background-color: beige;
+}
+
+figure img{
+    border: 1px solid rgb(53, 35, 59);
+    border-radius: 15px 20px;
+    padding: 5px;
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .Edu{
-    /* display: block;
-    font-weight: bold;
-    width: 200px;
-    text-align: center;
-    padding: 4px;
-    text-decoration: none;
-    margin: 0 auto;
-    margin-top: 10px;*/
+    display: inline;
+    font-weight: 100;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+li{
+      font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+
+}
+#Intro{
+          font-family: 'Courier New', Courier, monospace;
+         font-size: large;
+}
+#about{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    font-style: inherit;
+}
+#py li{
+    list-style-type: none;
+    margin: 0px 6px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    padding: 4px 0px;
+    display: inline-block;
+    font-family: cursive;
+     border: 5px solid rgb(90, 22, 112);
+     
+}
+#Ski{
+    color: black;
+}
+.Skills li{
+    list-style-type: none;
+    color: black;
+}
+.Project ul li{
+    color: black;
 }
